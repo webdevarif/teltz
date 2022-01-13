@@ -1,0 +1,37 @@
+// Fonts 
+:root{
+    --ff-primary: 'Roboto', sans-serif;
+};
+
+$font-family-sans-serif:
+  // Cross-platform generic font family (default user interface font)
+  var(--ff-primary),
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // Basic web fallback
+  "Helvetica Neue", Arial,
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$success: #567729;
+// $danger: #D52B1E;
+$danger: #941107;
+$primary: #A71999;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1500px
+);

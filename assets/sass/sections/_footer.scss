@@ -1,0 +1,19 @@
+.footer{
+    background: #D52B1E;
+
+    .list-menu li{
+        @include media-breakpoint-up(lg){
+            display: inline-block;
+            margin-left: 3rem;
+        }
+
+        a{
+            color: var(--bs-gray-200);
+            text-decoration: none;
+
+            &:hover{
+                color: var(--bs-white);
+            }
+        }
+    }
+}

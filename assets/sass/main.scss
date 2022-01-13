@@ -1,0 +1,128 @@
+@import "./variables";
+@import "./bootstrap/bootstrap";
+
+// Sections
+@import "./sections/header";
+@import "./sections/footer";
+@import "./sections/hero";
+@import "./sections/features";
+
+
+
+
+// Default
+body{
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@each $size in (50, 100) {
+    .py-#{$size}{
+        --padding-Y: #{$size}px;
+        padding-top: var(--padding-Y) !important;
+        padding-bottom: var(--padding-Y) !important;
+    }
+}
+
+@each $name, $lheight in (
+    sm: 1.5,
+    md: 1.8,
+    lg: 2.2,
+    xl: 2.5,
+) {
+    .lh-#{$name}{
+        line-height: var(--line-height, $lheight) !important;
+    }   
+}
+@each $size, $value in (
+    1: 3rem,
+    2: 2.5rem,
+    3: 2rem,
+    4: 26px,
+    5: 1.3rem,
+    6: 1rem,
+) {
+    h#{$size}{
+        font-size: var(--font-#{$size}, $value);
+        font-weight: bold;
+    }   
+    .fs-#{$size},
+    .h#{$size}{
+        font-size: var(--font-#{$size}, $value) !important;
+    }   
+}
+
+.fs-xs{
+    font-size: var(--font-xs, 0.75rem) !important;
+}
+@include media-breakpoint-up(lg){
+    .fs-1, h1{--font-1: 4rem;}
+    .fs-2, h2{--font-2: 3rem;}
+}
+
+
+.bg{
+    &-cover{
+        background-size: cover !important;
+    }
+    &-center{
+        background-position: center !important;
+    }
+    &-top-right{
+        background-position: top right !important;
+    }
+    &-top-center{
+        background-position: top center !important;
+    }
+    &-bottom-center{
+        background-position: bottom center !important;
+    }
+}
+
+.fw-ligher{
+    font-weight: lighter;
+}
+
+.video-cover {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 320px;
+
+    iframe, video{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+}
+
+
+// Sections
+.timing-area{
+    @include media-breakpoint-up(lg){
+        --timing-bg-position: top right;
+    }
+    padding: var(--timing-padding, 300px 0 20px);
+    background-position: var(--timing-bg-position, top left) !important;
+}
+
+.features-area{
+    background-color: #BAE287 !important;
+    background-repeat: no-repeat !important;
+    padding: var(--features-padding, 100px 0 300px);
+    background-size: var(--features--bg-size, 200%) !important;
+    background-position: var(--features--bg-position, bottom left) !important;
+    @include media-breakpoint-up(lg){
+        --features--bg-size: cover;
+        --features-padding: 100px 0 300px;
+    }
+}
+
+.target-goals-area{
+    @include media-breakpoint-up(lg){
+        --target-goals-bg-position: top right;
+    }
+    background-position: var(--target-goals-bg-position, top left) !important;
+}

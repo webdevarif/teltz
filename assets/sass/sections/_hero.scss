@@ -1,0 +1,12 @@
+.hero-area{
+    background: url("../img/hero-bg.png");
+    background-size: contain;
+    background-position: right 5.9rem;
+    background-color: #FC1614;
+    background-repeat: no-repeat;
+    padding: var(--hero-area--padding, 300px 0 30px);
+
+    @include media-breakpoint-up(lg){
+        --hero-area--padding: 100px 0;
+    }
+}
